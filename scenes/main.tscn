@@ -1,0 +1,83 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ry2ewjdxwmq"]
+
+[ext_resource type="Script" path="res://SaveTest.gd" id="1_mfh6p"]
+[ext_resource type="Script" path="res://textLineData.gd" id="2_quqxk"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mfh6p")
+
+[node name="HP" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HP"
+
+[node name="HP data" type="LineEdit" parent="." groups=["Save"]]
+layout_mode = 0
+offset_left = 36.0
+offset_right = 103.063
+offset_bottom = 31.0
+script = ExtResource("2_quqxk")
+
+[node name="Level" type="Label" parent="."]
+offset_left = 110.0
+offset_right = 150.0
+offset_bottom = 23.0
+text = "LVL"
+
+[node name="Level data" type="LineEdit" parent="." groups=["Save"]]
+offset_left = 146.0
+offset_right = 213.063
+offset_bottom = 31.0
+script = ExtResource("2_quqxk")
+
+[node name="Name" type="Label" parent="."]
+offset_left = 241.0
+offset_right = 288.0
+offset_bottom = 23.0
+text = "Name
+"
+
+[node name="Name data" type="LineEdit" parent="." groups=["Save"]]
+offset_left = 288.0
+offset_right = 355.063
+offset_bottom = 31.0
+script = ExtResource("2_quqxk")
+
+[node name="Save button" type="Button" parent="."]
+layout_mode = 0
+offset_top = 42.0
+offset_right = 115.0
+offset_bottom = 115.0
+text = "Save"
+
+[node name="Clear" type="Button" parent="."]
+offset_left = 128.0
+offset_top = 42.0
+offset_right = 243.0
+offset_bottom = 115.0
+text = "Clear"
+
+[node name="Load" type="Button" parent="."]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 42.0
+offset_right = 402.0
+offset_bottom = 118.0
+text = "Load"
+
+[connection signal="pressed" from="Save button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Save button" to="." method="_on_save_button_pressed_binary"]
+[connection signal="pressed" from="Clear" to="HP data" method="_on_clear_pressed"]
+[connection signal="pressed" from="Clear" to="Level data" method="_on_clear_pressed"]
+[connection signal="pressed" from="Clear" to="Name data" method="_on_clear_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_load_pressed_binary"]
